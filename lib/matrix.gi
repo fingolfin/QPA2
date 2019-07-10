@@ -161,7 +161,7 @@ function( M )
   dim := DimensionsMat( M );
   return List( [ 1 .. dim[ 1 ] ],
                i -> List( [ 1 .. dim[ 2 ] ],
-                          j -> MatElm( M, i, j ) ) );
+                          j -> M[ i, j ] ) );
 end );
 
 InstallMethod( ColsOfMatrix, "for QPA matrix",
@@ -171,7 +171,7 @@ function( M )
   dim := DimensionsMat( M );
   return List( [ 1 .. dim[ 2 ] ],
                j -> List( [ 1 .. dim[ 1 ] ],
-                          i -> MatElm( M, i, j ) ) );
+                          i -> M[ i, j ] ) );
 end );
 
 InstallMethod( RowsOfMatrix, "for row matrix",
@@ -395,7 +395,7 @@ function( M1, M2 )
   fi;
   for i in [ 1 .. dim[ 1 ] ] do
     for j in [ 1 .. dim[ 2 ] ] do
-      if MatElm( M1, i, j ) <> MatElm( M2, i, j ) then
+      if M1[ i, j ] <> M2[ i, j ] then
         return false;
       fi;
     od;
@@ -409,7 +409,7 @@ function( M )
   dim := DimensionsMat( M );
   for i in [ 1 .. dim[ 1 ] ] do
     for j in [ 1 .. dim[ 2 ] ] do
-      if not IsZero( MatElm( M, i, j ) ) then
+      if not IsZero( M[ i, j ] ) then
         return false;
       fi;
     od;

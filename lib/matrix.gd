@@ -32,7 +32,7 @@ DeclareCategory( "IsQPAMatrix", IsMatrixObj );
 #!  Construct a QPA matrix over the ring <A>R</A> containing the
 #!  elements in <A>L</A>, which should be a list of lists of ring elements.
 #!  Each sublist of <A>L</A> is taken as a row of the resulting matrix <C>M</C>;
-#!  that is, the element <C>L[i][j]</C> will be <C>MatElm(M,i,j)</C>.
+#!  that is, the element <C>L[i][j]</C> will be <C>M[ i, j ]</C>.
 DeclareOperation( "MatrixByRows", [ IsRing, IsMatrix ] );
 #DeclareOperation( "MatrixByRows", [ IsRing, IsDenseList, IsMatrix ] );
 DeclareOperation( "MatrixByRows", [ IsRing, IsDenseList, IsDenseList ] );
@@ -43,7 +43,7 @@ DeclareOperation( "MatrixByRows", [ IsRing, IsDenseList, IsDenseList ] );
 #!  Construct a QPA matrix over the ring <A>R</A> containing the
 #!  elements in <A>L</A>, which should be a list of lists of ring elements.
 #!  Each sublist of <A>L</A> is taken as a column of the resulting matrix <C>M</C>;
-#!  that is, the element <C>L[i][j]</C> will be <C>MatElm(M,j,i)</C>.
+#!  that is, the element <C>L[i][j]</C> will be <C>M[ j, i ]</C>.
 DeclareOperation( "MatrixByCols", [ IsRing, IsMatrix ] );
 #DeclareOperation( "MatrixByCols", [ IsRing, IsDenseList, IsMatrix ] );
 DeclareOperation( "MatrixByCols", [ IsRing, IsDenseList, IsDenseList ] );
